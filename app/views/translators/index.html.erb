@@ -1,0 +1,40 @@
+
+<h1>Translators</h1>
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th>Name</th>
+      <th>Group</th>
+      <th>Email</th>
+      <th>Discord</th>
+      <th>Twitter</th>
+      <th>Kofi</th>
+   
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @translators.each do |translator| %>
+    <% if translator.user == current_user%>
+      <tr>
+        <td><%= link_to translator.first_name+" "+ translator.last_name, translator %></td>
+        <td><%= link_to translator.group,"https://www.google.com.ph/", :target => "_blank"  %></td>
+        <td><%= translator.email %></td>
+        <td><%= translator.discord %></td>
+        <td><%= translator.twitter %></td>
+        <td><%= translator.kofi %></td>
+       
+        <td><%= link_to 'Delete', translator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end%>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Translator', new_translator_path, class:"btn btn-primary"   %>
+
+

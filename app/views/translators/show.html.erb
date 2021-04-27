@@ -1,0 +1,14 @@
+<div class="jumbotron ">
+  <h1 class="display-4 ">  <%= @translator.first_name %>   <%= @translator.last_name %>
+
+</h1>
+   <p class="lead"> <i class="fas fa-user-friends"></i> <%= @translator.group %></p>
+  <p class="lead"> <i class="fas fa-at ema"></i> <%= @translator.email %></p>
+  <p class="lead"> <i class="fab fa-discord disco"></i>    <%= @translator.discord %></p>
+  <p class="lead"> <i class="fab fa-twitter tweet"></i> <%= @translator.twitter %></p>
+  <p class="lead">  <i class="fas fa-mug-hot cawfee"></i> <%= @translator.kofi %></p>
+
+  <%= link_to 'Edit', edit_translator_path(@translator), class:"btn btn-primary" %> 
+<%= link_to 'Back', translators_path, class:"btn btn-secondary" %>
+</div>
+

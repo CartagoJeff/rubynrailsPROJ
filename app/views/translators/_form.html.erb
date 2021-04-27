@@ -1,0 +1,60 @@
+<%= form_with(model: translator) do |form| %>
+  <% if translator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(translator.errors.count, "error") %> prohibited this translator from being saved:</h2>
+
+      <ul>
+        <% translator.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field form-group">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name , class:"form-control", placeholder:"Last Name"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :group %>
+    <%= form.text_field :group , class:"form-control", placeholder:"jeptranslations.com"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email , class:"form-control", placeholder:"jeptranslations@email.com"%>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :discord %>
+    <%= form.text_field :discord, class:"form-control", placeholder:"Jeptranslations #1591" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :twitter %>
+    <%= form.text_field :twitter, class:"form-control", placeholder:"@jeptranslations" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :kofi %>
+    <%= form.text_field :kofi, class:"form-control", placeholder:"jeptt" %>
+  </div>
+
+  <div class="field form-group">
+   <%= form.number_field :user_id, id: :translator_user_id, value: current_user.id,  class:"form-control", type: :hidden%>
+  </div>
+
+
+  <div class="actions ">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+  <br>
+
+<% end %>
