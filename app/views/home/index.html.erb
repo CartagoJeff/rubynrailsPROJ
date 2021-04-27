@@ -57,6 +57,8 @@
 
 
 
+        <% if user_signed_in? %>
+
 <script>
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
@@ -91,6 +93,8 @@ function addItem(e){
     //Add classes to del button
     deleteBtn.className = 'btn btn-danger btn-sm float-right delete';
 
+
+    
     // Append text node
     deleteBtn.appendChild(document.createTextNode('X'));
 
@@ -119,4 +123,5 @@ function removeItem(e){
 
                     </script> 
 
-                    
+  <% else%>
+  <% end%>
