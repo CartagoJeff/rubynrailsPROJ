@@ -5,6 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -22,7 +23,6 @@
             <li><a class="dropdown-item" href="https://www.google.com.ph/">Witch Cult Translations</a></li>
             <li><a class="dropdown-item" href="https://www.google.com.ph/">Maru Translations</a></li>
 
-
           </ul>
         </li>
      
@@ -30,49 +30,46 @@
 
         <% if user_signed_in? %>
 
-   <li class="nav-item">
+      <li class="nav-item">
         <%= link_to "Translators", translators_path, class:"nav-link"  %>
-        </li>
+      </li>
 
-        
-
-        
-          
-         <li class="nav-item">
+      <li class="nav-item">
         <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link"  %>
-        </li>
+      </li>
 
         <% else %>
 
-  
         <% end%>
 
-        
-      </ul>
-      </div>
-      
-   
-     <% if user_signed_in? %>
-
-
+          <% if user_signed_in? %>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
- <li class="nav-item">
+     <li class="nav-item">
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete,  class:"nav-link"  %>
-          </li>
+     </li>
      
      <% else%>
-       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
          <li class="nav-item">
         <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"  %>
         </li>
-
          <li class="nav-item">
         <%= link_to "Sign In", new_user_session_path, class:"nav-link"  %>
         </li>
-<% end%>
+      <% end%>
       </ul>
+
+      
+      </ul>
+
+      
+      </div>
+    
+   
     </div>
   </div>
 </nav>
+
+
+
