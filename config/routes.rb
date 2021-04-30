@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :translators
   # get 'home/index'
   get 'home/about'
+  get  'readln/overlord'
+  get  'readln/slime'
+  get  'readln/konosuba'
+  get  'readln/rezero'
   root 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
